@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ❤️</title>
+
+    <style>
+        /* =========================
+   BASIC SETTINGS
+========================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background: #fff8f5;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+   BIRTHDAY TREE
+========================= */
+
+        .hero {
+
+            height: 100vh;
+            min-height: 650px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(circle at center,
+                    #ffffff 0%,
+                    #fff8ef 55%,
+                    #ffe5df 100%);
+        }
+
+
+        /* Tree trunk */
+
+        .trunk {
+
+            position: absolute;
+
+            left: 50%;
+            bottom: 0;
+
+            width: 25px;
+            height: 48%;
+
+            transform: translateX(-50%);
+
+            background:
+                linear-gradient(90deg,
+                    #35151d,
+                    #75333e,
+                    #401921);
+
+            border-radius: 15px;
+        }
+
+
+        /* Tree branches */
+
+        .branch {
+
+            position: absolute;
+
+            height: 10px;
+
+            background: #55222c;
+
+            border-radius: 20px;
+
+            transform-origin: left center;
+        }
+
+
+        .branch1 {
+
+            width: 320px;
+
+            left: 50%;
+            top: 45%;
+
+            transform: rotate(-35deg);
+        }
+
+
+        .branch2 {
+
+            width: 300px;
+
+            left: 50%;
+            top: 44%;
+
+            transform: rotate(35deg);
+        }
+
+
+        .branch3 {
+
+            width: 230px;
+
+            left: 50%;
+            top: 32%;
+
+            transform: rotate(-60deg);
+        }
+
+
+        .branch4 {
+
+            width: 230px;
+
+            left: 50%;
+            top: 32%;
+
+            transform: rotate(60deg);
+        }
+
+
+        .branch5 {
+
+            width: 190px;
+
+            left: 50%;
+            top: 22%;
+
+            transform: rotate(-22deg);
+        }
+
+
+        .branch6 {
+
+            width: 190px;
+
+            left: 50%;
+            top: 22%;
+
+            transform: rotate(22deg);
+        }
+
+
+        /* =========================
+   HEARTS
+========================= */
+
+        .hearts {
+
+            position: absolute;
+
+            top: 3%;
+            left: 3%;
+            right: 3%;
+            bottom: 25%;
+        }
+
+
+        .heart {
+
+            position: absolute;
+
+            animation:
+                float 3s infinite ease-in-out;
+
+            filter:
+                drop-shadow(0 4px 5px rgba(210, 50, 110, .2));
+        }
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+
+                transform:
+                    translateY(0) scale(1);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-12px) scale(1.08);
+            }
+
+        }
+
+
+        /* =========================
+   BIRTHDAY TEXT
+========================= */
+
+        .birthday-text {
+
+            position: absolute;
+
+            left: 7%;
+            top: 57%;
+
+            z-index: 5;
+        }
+
+
+        .small-text {
+
+            font-family: Georgia, serif;
+
+            font-style: italic;
+
+            font-size: 18px;
+
+            color: #7b5563;
+        }
+
+
+        h1 {
+
+            margin: 5px 0;
+
+            color: #cf2d70;
+
+            font-family:
+                "Brush Script MT",
+                "Segoe Script",
+                cursive;
+
+            font-size: 80px;
+
+            line-height: .85;
+
+            font-weight: 500;
+        }
+
+
+        .subtitle {
+
+            font-family: Georgia, serif;
+
+            color: #876170;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
+   CODE SECTION
+========================= */
+
+        .code-section {
+
+            background: white;
+
+            padding: 0 18px 60px;
+        }
+
+
+        .code-box {
+
+            width: min(920px, 100%);
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            background: #180d18;
+
+            color: white;
+
+            border-radius:
+                0 0 18px 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 40px rgba(40, 10, 30, .2);
+        }
+
+
+        .code {
+
+            padding: 25px;
+
+            border-right:
+                1px solid #4b3045;
+        }
+
+
+        .code:last-child {
+
+            border-right: none;
+        }
+
+
+        .code-title {
+
+            font-family: monospace;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+
+        pre {
+
+            white-space: pre-wrap;
+
+            font-family: monospace;
+
+            font-size: 13px;
+
+            line-height: 1.7;
+
+            color: #ead7e4;
+        }
+
+
+        /* =========================
+   BABY MEMORIES
+========================= */
+
+        .memories {
+
+            background:
+                linear-gradient(#ffffff,
+                    #fff7f4);
+
+            padding:
+                60px 18px;
+        }
+
+
+        .memories-title {
+
+            text-align: center;
+
+            font-family:
+                "Brush Script MT",
+                cursive;
+
+            font-size: 48px;
+
+            color: #cf2d70;
+        }
+
+
+        .memories-subtitle {
+
+            text-align: center;
+
+            color: #876170;
+
+            font-family: Georgia, serif;
+        }
+
+
+        .photo {
+
+            display: block;
+
+            width: min(920px, 100%);
+
+            margin: 30px auto;
+
+            padding: 10px;
+
+            background: white;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 15px 40px rgba(70, 20, 40, .15);
+        }
+
+
+        /* =========================
+   FOOTER
+========================= */
+
+        footer {
+
+            padding: 30px;
+
+            text-align: center;
+
+            background: #ffede9;
+
+            color: #8b6271;
+        }
+
+
+        /* =========================
+   MOBILE
+========================= */
+
+        @media(max-width:700px) {
+
+            h1 {
+
+                font-size: 58px;
+            }
+
+            .birthday-text {
+
+                top: 60%;
+
+                left: 8%;
+            }
+
+            .code-box {
+
+                grid-template-columns: 1fr;
+            }
+
+            .code {
+
+                border-right: none;
+
+                border-bottom:
+                    1px solid #4b3045;
+            }
+
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+     BIRTHDAY TREE
+========================= -->
+
+    <section class="hero">
+
+
+        <div class="trunk"></div>
+
+
+        <div class="branch branch1"></div>
+
+        <div class="branch branch2"></div>
+
+        <div class="branch branch3"></div>
+
+        <div class="branch branch4"></div>
+
+        <div class="branch branch5"></div>
+
+        <div class="branch branch6"></div>
+
+
+        <div class="hearts" id="hearts">
+        </div>
+
+
+        <div class="birthday-text">
+
+            <div class="small-text">
+
+                and... make it count
+
+            </div>
+
+
+            <h1>
+
+                Happy<br>
+                Birthday
+
+            </h1>
+
+
+            <div class="subtitle">
+
+                here's to a year that blooms ❤️
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =========================
+     CODE PANELS
+========================= -->
+
+    <section class="code-section">
+
+
+        <div class="code-box">
+
+
+            <!-- LEFT CODE -->
+
+            <div class="code">
+
+                <div class="code-title">
+
+                    🌸 index.html
+
+                </div>
+
+
+                <pre>
+
+&lt;!-- a real recursive bow --&gt;
+
+&lt;div class="archery"&gt;
+
+    &lt;svg class="bow"&gt;
+
+        &lt;path class="limb" /&gt;
+
+        &lt;line class="string" /&gt;
+
+    &lt;/svg&gt;
+
+
+    &lt;svg class="arrow"&gt;
+
+        &lt;path class="head" /&gt;
+
+        &lt;g class="fletch"&gt;
+
+    &lt;/svg&gt;
+
+&lt;/div&gt;
+
+</pre>
+
+            </div>
+
+
+            <!-- RIGHT CODE -->
+
+            <div class="code">
+
+                <div class="code-title">
+
+                    💛 birthday.js
+
+                </div>
+
+
+                <pre>
+
+
+// pull back,
+// then let it fly
+
+function fire() {
+
+    string({
+        y2: rest
+    });
+
+    arrow.to({
+        y: heart
+    });
+
+}
+
+
+// bloom hearts
+
+while (
+    hearts.length < 340
+) {
+
+    const [u,v] =
+        sample();
+
+    bloom(
+        u,
+        v
+    );
+
+}
+
+</pre>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     BABY PHOTOS
+========================= -->
+
+    <section class="memories">
+
+
+        <h2 class="memories-title">
+
+            Beautiful Memories 📸
+
+        </h2>
+
+
+        <p class="memories-subtitle">
+
+            Every little moment is a precious memory ❤️
+
+        </p>
+
+
+        <img class="photo" src="baby-memories.jpeg" alt="Baby memories">
+
+
+    </section>
+
+
+    <footer>
+
+        Made with ❤️
+        for a very special birthday
+
+    </footer>
+
+
+    <!-- =========================
+     JAVASCRIPT
+========================= -->
+
+    <script>
+
+
+        const heartBox =
+            document.getElementById("hearts");
+
+
+        const heartTypes = [
+
+            "💗",
+            "💕",
+            "💖",
+            "💓",
+            "💘",
+            "🩷",
+            "🧡",
+            "💛"
+
+        ];
+
+
+        for (
+            let i = 0;
+            i < 180;
+            i++
+        ) {
+
+
+            const heart =
+                document.createElement("span");
+
+
+            heart.className =
+                "heart";
+
+
+            heart.innerHTML =
+                heartTypes[
+                Math.floor(
+                    Math.random()
+                    *
+                    heartTypes.length
+                )
+                ];
+
+
+            heart.style.left =
+                Math.random() * 96 + "%";
+
+
+            heart.style.top =
+                Math.random() * 72 + "%";
+
+
+            heart.style.fontSize =
+                14 +
+                Math.random() * 25
+                + "px";
+
+
+            heart.style.animationDelay =
+                Math.random() * 4
+                + "s";
+
+
+            heartBox.appendChild(
+                heart
+            );
+
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
